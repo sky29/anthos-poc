@@ -65,3 +65,9 @@ module "gke_hub_membership" {
     gke_hub_membership_id = var.gke_hub_membership_id
     cluster_id = module.compute_gke_cluster_zonal.cluster_id
 }
+
+
+module "anthos_feature_acm" {
+    source = "../../../modules/03_compute/04_anthos_feature_acm"
+    gke_hub_membership_id = module.gke_hub_membership.membership_id
+}

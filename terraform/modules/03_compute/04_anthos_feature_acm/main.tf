@@ -6,7 +6,7 @@ resource "google_gke_hub_feature" "gke_hub_feature" {
 resource "google_gke_hub_feature_membership" "gke_hub_feature_membership" {
   location = "global"
   feature = google_gke_hub_feature.gke_hub_feature.name
-  membership = google_gke_hub_membership.gke_hub_membership.membership_id
+  membership = var.gke_hub_membership_id
   configmanagement {
     version = "1.8.0"
     config_sync {
