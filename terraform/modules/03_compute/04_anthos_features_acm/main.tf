@@ -11,9 +11,9 @@ resource "google_gke_hub_feature_membership" "gke_hub_feature_membership" {
     version = "1.8.0"
     config_sync {
       git {
-        sync_repo = "https://github.com/terraform-google-modules/terraform-google-kubernetes-engine.git"
-        sync_branch = "master"
-        policy_dir = "examples/acm-terraform-blog-part1/config-root"
+        sync_repo = "https://github.com/sky29/anthos-poc.git"
+        sync_branch = "main"
+        policy_dir = "configurations"
         secret_type = "none"
       }
     }
