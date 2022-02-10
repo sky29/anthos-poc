@@ -1,0 +1,20 @@
+import json, time, sys, datetime
+
+# Total arguments passed
+print("Total arguments passed:", len(sys.argv))
+
+# Reading the second argument passed
+print("Prefix:", sys.argv[1])
+
+def name_generator(prefix):
+  return prefix + "-" + f"{int(time.time())}"
+
+# print (name_generator(sys.argv[1]))
+utc_time = datetime.datetime.utcnow() 
+print(utc_time.strftime('%Y-%m-%d'))
+
+# result = {
+#   "name": name_generator(sys.argv[1]),
+# }
+
+# print(json.dumps(result))

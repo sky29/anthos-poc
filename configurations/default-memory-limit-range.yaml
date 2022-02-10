@@ -1,0 +1,14 @@
+# any container within that Pod does not specify its own values for memory request and memory limit, then the control plane applies default values: a memory request of 512MiB and a memory limit of 1024MiB.
+# Refer: https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/#create-a-limitrange-and-a-pod
+
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: memory-limit-range
+spec:
+  limits:
+  - default:
+      memory: 1024Mi
+    defaultRequest:
+      memory: 512Mi
+    type: Container
