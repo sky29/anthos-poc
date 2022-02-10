@@ -69,5 +69,6 @@ module "gke_hub_membership" {
 
 module "anthos_feature_acm" {
     source = "../../../modules/03_compute/04_anthos_feature_acm"
-    gke_hub_membership_id = module.gke_hub_membership.membership_id
+    project_id = var.project_id
+    gke_hub_membership_id = var.gke_hub_membership_id
 }
