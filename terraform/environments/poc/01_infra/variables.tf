@@ -118,3 +118,28 @@ variable "gke_hub_membership_id" {
   type          = string
   default       = ""
 }
+
+variable "min_node_count" {
+  type          = number
+  default       = 1
+}
+
+variable "max_node_count" {
+  type          = number
+  default       = 3
+}
+
+variable "gcp_node_pool_sa" {
+  type          = string
+  default       = ""
+}
+
+# variable "workload_metadata_config" {
+#   type          = string
+#   default       = ""
+# }
+
+# variable "is_config_connector_enabled" {
+#   type          = bool
+#   default       = false
+# }

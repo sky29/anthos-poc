@@ -62,3 +62,13 @@ variable "pod_ip_range" {
   type          = string
   default       = ""
 }
+
+# variable "is_config_connector_enabled" {
+#   type          = bool
+#   default       = false
+# }
+
+# variable "workload_metadata_config" {
+#   type          = string
+#   default       = ""
+# }

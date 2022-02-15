@@ -53,8 +53,13 @@ module "compute_gke_cluster_node_pool_1" {
     cluster_id = module.compute_gke_cluster_zonal.cluster_id
 
     node_count = var.node_count
+    min_node_count = var.min_node_count
+    max_node_count = var.max_node_count
+
     is_preemptible = var.is_preemptible
     machine_type = var.machine_type
+
+    gcp_node_pool_sa = var.gcp_node_pool_sa
 }
 
 

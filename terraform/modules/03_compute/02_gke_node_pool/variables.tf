@@ -42,3 +42,19 @@ variable "machine_type" {
   type          = string
   default       = ""
 }
+
+
+variable "min_node_count" {
+  type          = number
+  default       = 1
+}
+
+variable "max_node_count" {
+  type          = number
+  default       = 3
+}
+
+variable "gcp_node_pool_sa" {
+  type          = string
+  default       = ""
+}

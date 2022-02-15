@@ -20,6 +20,20 @@ resource "google_container_cluster" "gcp_gke_cluster_regional" {
   workload_identity_config {
     workload_pool = "${var.project_id}.svc.id.goog"
   }
+
+  # workload_metadata_config {
+  #   mode = var.workload_metadata_config
+  # }
+
+  # config_connector_config {
+  #   enabled = var.is_config_connector_enabled
+  # }
+
+  lifecycle {
+    ignore_changes = [
+      min_master_version
+    ]
+  }
 }
 
 
@@ -43,5 +57,17 @@ resource "google_container_cluster" "gcp_gke_cluster_zonal" {
 
   workload_identity_config {
     workload_pool = "${var.project_id}.svc.id.goog"
+  }
+
+  # workload_metadata_config {
+  #   mode = var.workload_metadata_config
+  # }
+  # config_connector_config {
+  #   enabled = var.is_config_connector_enabled
+  # }
+  lifecycle {
+    ignore_changes = [
+      min_master_version
+    ]
   }
 }
