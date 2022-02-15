@@ -1,3 +1,3 @@
-credentials
-temp2   
-terraform/environments/poc/01_infra/.terraform
+credentials/
+temp2/
+terraform/environments/poc/01_infra/.terraform/modules/
