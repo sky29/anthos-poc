@@ -1,5 +1,6 @@
 
-project_id = "lab1-320219"
+project_id = "REPLACE_ME"
+region = "us-central1"
 
 
 # Google Cloud APIs
