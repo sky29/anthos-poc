@@ -2,11 +2,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: wi-k8s-ns
-
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: wi-k8s-sa
-  namespace: wi-k8s-ns
+  name: wi-k8s-ns-2
