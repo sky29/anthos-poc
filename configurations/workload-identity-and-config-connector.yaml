@@ -1,12 +1,4 @@
 ---
-apiVersion: iam.cnrm.cloud.google.com/v1beta1
-kind: IAMServiceAccount
-metadata:
-  name: wi-gcp-sa
-spec:
-  displayName: wi-gcp-sa
-
----
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -20,41 +12,3 @@ metadata:
   namespace: wi-k8s-ns
   annotations:
     iam.gke.io/gcp-service-account: wi-gcp-sa@lab1-320219.iam.gserviceaccount.com
-
----
-apiVersion: iam.cnrm.cloud.google.com/v1beta1
-kind: IAMPolicy
-metadata:
-  name: wi-iam-policy
-spec:
-  resourceRef:
-    apiVersion: iam.cnrm.cloud.google.com/v1beta1
-    kind: IAMServiceAccount
-    name: wi-gcp-sa
-  bindings:
-    - role: roles/iam.workloadIdentityUser
-      members:
-        - serviceAccount:lab1-320219.svc.id.goog[wi-k8s-ns/wi-k8s-sa]
-
----
-apiVersion: sql.cnrm.cloud.google.com/v1beta1
-kind: SQLDatabase
-metadata:
-  name: wordpress
-  namespace: wi-k8s-ns
-spec:
-  charset: utf8
-  instanceRef:
-    name: wp-db
-
----
-apiVersion: sql.cnrm.cloud.google.com/v1beta1
-kind: SQLInstance
-metadata:
-  name: wp-db
-  namespace: wi-k8s-ns
-spec:
-  databaseVersion: MYSQL_5_7
-  region: us-central1
-  settings:
-    tier: db-f1-micro
