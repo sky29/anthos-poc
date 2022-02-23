@@ -10,5 +10,3 @@ kind: ServiceAccount
 metadata:
   name: wi-k8s-sa
   namespace: wi-k8s-ns
-  annotations:
-    iam.gke.io/gcp-service-account: wi-gcp-sa@lab1-320219.iam.gserviceaccount.com
