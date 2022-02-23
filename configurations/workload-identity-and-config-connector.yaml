@@ -37,15 +37,6 @@ spec:
         - serviceAccount:lab1-320219.svc.id.goog[wi-k8s-ns/wi-k8s-sa]
 
 ---
-apiVersion: core.cnrm.cloud.google.com/v1beta1
-kind: ConfigConnector
-metadata:
-  name: configconnector.core.cnrm.cloud.google.com
-spec:
-  googleServiceAccount: "wi-gcp-sa@$lab1-320219.iam.gserviceaccount.com" 
-  mode: namespaced
-
----
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLDatabase
 metadata:
