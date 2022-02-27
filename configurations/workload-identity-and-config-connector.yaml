@@ -11,5 +11,5 @@ metadata:
   name: k8s-cnrmsa
   namespace: test-workload-identity-ns
   annotations = {
-    "iam.gke.io/gcp-service-account" = "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+    "iam.gke.io/gcp-service-account": "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
   }
