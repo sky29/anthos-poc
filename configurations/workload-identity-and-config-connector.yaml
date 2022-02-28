@@ -49,7 +49,7 @@ metadata:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLInstance
 metadata:
-  name: wp-db-3
+  name: wp-db
   namespace: test-workload-identity-ns
 spec:
   databaseVersion: MYSQL_5_7
