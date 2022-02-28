@@ -17,9 +17,9 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
-  name: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+  name: "cnrmsa"
 spec:
-  displayName: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+  displayName: "cnrmsa"
 
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
@@ -30,7 +30,7 @@ spec:
   resourceRef:
     apiVersion: iam.cnrm.cloud.google.com/v1beta1
     kind: IAMServiceAccount
-    name: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+    name: "cnrmsa"
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
