@@ -17,9 +17,9 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
-  name: "cnrmsa"
+  name: "testing"
 spec:
-  displayName: "cnrmsa"
+  displayName: "testing"
 
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
@@ -30,7 +30,7 @@ spec:
   resourceRef:
     apiVersion: iam.cnrm.cloud.google.com/v1beta1
     kind: IAMServiceAccount
-    name: "cnrmsa"
+    name: "testing"
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
