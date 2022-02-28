@@ -17,11 +17,11 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
-  name: "testing"
+  name: "testing2"
   annotations:
     cnrm.cloud.google.com/project-id: "anthos-lab-6b57eb58"
 spec:
-  displayName: "testing"
+  displayName: "testing2"
 
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
