@@ -53,8 +53,6 @@ metadata:
   namespace: test-workload-identity-ns
 spec:
   serviceAccountName: k8s-cnrmsa
-  nodeSelector:
-    iam.gke.io/gke-metadata-server-enabled: "true"
   databaseVersion: MYSQL_5_7
   region: us-central1
   settings:
@@ -68,8 +66,6 @@ metadata:
   namespace: test-workload-identity-ns
 spec:
   serviceAccountName: k8s-cnrmsa
-  nodeSelector:
-    iam.gke.io/gke-metadata-server-enabled: "true"
   charset: utf8
   instanceRef:
     name: wp-db
