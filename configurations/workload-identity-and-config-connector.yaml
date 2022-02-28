@@ -52,7 +52,7 @@ metadata:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLInstance
 metadata:
-  name: wp-db-5
+  name: wp-db-6
   namespace: test-workload-identity-ns
 spec:
   databaseVersion: MYSQL_5_7
@@ -64,9 +64,9 @@ spec:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLDatabase
 metadata:
-  name: wordpress-2
+  name: wordpress-3
   namespace: test-workload-identity-ns
 spec:
   charset: utf8
   instanceRef:
-    name: wp-db-5
+    name: wp-db-6
