@@ -52,7 +52,7 @@ metadata:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLInstance
 metadata:
-  name: wp-db-2
+  name: wp-db-3
   namespace: test-workload-identity-ns
   annotations:
     cnrm.cloud.google.com/project-id: "anthos-lab-6b57eb58"
@@ -73,4 +73,4 @@ metadata:
 spec:
   charset: utf8
   instanceRef:
-    name: wp-db-2
+    name: wp-db-3
