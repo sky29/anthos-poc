@@ -5,15 +5,6 @@ metadata:
   name: test-workload-identity-ns
 
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: k8s-cnrmsa
-  namespace: test-workload-identity-ns
-  annotations:
-    "iam.gke.io/gcp-service-account": "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
-
----
 apiVersion: core.cnrm.cloud.google.com/v1beta1
 kind: ConfigConnector
 metadata:
@@ -23,12 +14,47 @@ spec:
   mode: cluster
 
 ---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+spec:
+  displayName: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: iampolicy-workload-identity-sample
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:anthos-lab-6b57eb58.svc.id.goog[test-workload-identity-ns/k8s-cnrmsa]
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: k8s-cnrmsa
+  namespace: test-workload-identity-ns
+  annotations:
+    "iam.gke.io/gcp-service-account": "cnrmsa@anthos-lab-6b57eb58.iam.gserviceaccount.com"
+    
+---
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLInstance
 metadata:
   name: wp-db-3
   namespace: test-workload-identity-ns
 spec:
+  serviceAccountName: k8s-cnrmsa
+  nodeSelector:
+    iam.gke.io/gke-metadata-server-enabled: "true"
   databaseVersion: MYSQL_5_7
   region: us-central1
   settings:
@@ -41,6 +67,9 @@ metadata:
   name: wordpress
   namespace: test-workload-identity-ns
 spec:
+  serviceAccountName: k8s-cnrmsa
+  nodeSelector:
+    iam.gke.io/gke-metadata-server-enabled: "true"
   charset: utf8
   instanceRef:
     name: wp-db
