@@ -52,7 +52,6 @@ metadata:
   name: wp-db-3
   namespace: test-workload-identity-ns
 spec:
-  serviceAccountName: k8s-cnrmsa
   databaseVersion: MYSQL_5_7
   region: us-central1
   settings:
@@ -65,7 +64,6 @@ metadata:
   name: wordpress
   namespace: test-workload-identity-ns
 spec:
-  serviceAccountName: k8s-cnrmsa
   charset: utf8
   instanceRef:
     name: wp-db
