@@ -17,7 +17,7 @@ metadata:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLInstance
 metadata:
-  name: wp-db-9
+  name: wp-db-1646158076
   namespace: test-workload-identity-ns
   annotations:
     cnrm.cloud.google.com/project-id: "anthos-lab-6b57eb58"
@@ -31,11 +31,11 @@ spec:
 apiVersion: sql.cnrm.cloud.google.com/v1beta1
 kind: SQLDatabase
 metadata:
-  name: wordpress-6
+  name: wordpress
   namespace: test-workload-identity-ns
   annotations:
     cnrm.cloud.google.com/project-id: "anthos-lab-6b57eb58"
 spec:
   charset: utf8
   instanceRef:
-    name: wp-db-9
+    name: wp-db-1646158076
